@@ -71,6 +71,15 @@ dsh plugin --profile web add "/Users/relphchris/Desktop/DeepSeek Harness/dsh-git
 
 ## 使用
 
+### 从想法到发布（完整流程）
+
+当你说「我有个想法，帮我做成插件并发布」时，模型会：
+
+1. 先问你是否**启用全自动发布**（发布到 GitHub + npm）
+2. 确认后：**实现功能 → 跑测试 → 写 README/安装说明 → 建仓库（新插件）→ `gh_publish` 一键发 npm + GitHub**
+
+### 已有插件直接发布
+
 新会话里直接说（或让模型调工具）：
 
 ```

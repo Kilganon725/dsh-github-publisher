@@ -30,7 +30,13 @@ dsh plugin --profile web add "/Users/relphchris/Desktop/DeepSeek Harness/dsh-git
 
 ## 装完怎么用
 
-新会话里说（或让模型先调工具）：
+### 从想法到发布（完整流程）
+
+说「我有个想法，帮我做成插件并发布」，模型会：
+1. 先问你是否启用全自动发布（GitHub + npm）
+2. 确认后：实现 → 测试 → 写 README/安装说明 → 建仓库（新插件）→ 一键发 npm + GitHub
+
+### 已有插件直接发布
 
 ```
 先 gh_status("/Users/relphchris/Desktop/DeepSeek Harness/dsh-sysmon")

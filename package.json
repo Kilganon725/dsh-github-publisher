@@ -1,6 +1,6 @@
 {
   "name": "dsh-github-publisher",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "DeepSeek Harness 全自动 GitHub 发布插件：一句「发布 dsh-xxx」即自动 bump 版本、npm pack、commit/push、打 tag、创建 GitHub Release（附 .tgz）、并触发 npm 发布。",
   "keywords": [
     "dsh",
