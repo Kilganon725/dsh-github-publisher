@@ -1,0 +1,64 @@
+{
+  "name": "dsh-github-publisher",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 全自动 GitHub 发布插件：一句「发布 dsh-xxx」即自动 bump 版本、npm pack、commit/push、打 tag、创建 GitHub Release（附 .tgz）、并触发 npm 发布。",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "github",
+    "release",
+    "publish",
+    "npm",
+    "自动发布",
+    "发布"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./core": "./lib/core.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "docs",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate.mjs",
+    "pack": "npm pack"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Kilganon725",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kilganon725/dsh-github-publisher.git"
+  },
+  "homepage": "https://github.com/Kilganon725/dsh-github-publisher#readme",
+  "bugs": {
+    "url": "https://github.com/Kilganon725/dsh-github-publisher/issues"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.1.1-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-tools": "^0.1.1-rc.2"
+  }
+}

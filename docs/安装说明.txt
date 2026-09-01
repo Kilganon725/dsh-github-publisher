@@ -1,0 +1,52 @@
+# dsh-github-publisher 安装说明
+
+全自动把 dsh 插件仓库发布到 GitHub（+ npm）：一句话「发布 dsh-xxx」，
+自动 bump 版本、npm pack、commit/push、打 tag、建 Release（附 .tgz）、发 npm。
+
+## 安装（任选其一）
+
+```bash
+# 方式一：npm（发布后）
+dsh plugin --profile web add dsh-github-publisher
+
+# 方式二：GitHub
+dsh plugin --profile web add github:Kilganon725/dsh-github-publisher
+
+# 方式三：本地源码目录
+dsh plugin --profile web add "/Users/relphchris/Desktop/DeepSeek Harness/dsh-github-publisher"
+```
+
+装完必须重启 dsh web 并刷新页面：`dsh web`
+
+## 前置要求
+
+- 已装 DeepSeek Harness (dsh)，Node.js >= 20
+- git
+- gh CLI 且已 gh auth login（建 GitHub Release 用）：
+  brew install gh && gh auth login
+- 发 npm：
+  - workflow 模式（默认）：仓库在 GitHub 配了 NPM_TOKEN secret
+  - direct 模式：本机 npm login，或环境变量 NODE_AUTH_TOKEN / NPM_TOKEN
+
+## 装完怎么用
+
+新会话里说（或让模型先调工具）：
+
+```
+先 gh_status("/Users/relphchris/Desktop/DeepSeek Harness/dsh-sysmon")
+然后 gh_publish("/Users/relphchris/Desktop/DeepSeek Harness/dsh-sysmon")
+```
+
+常用：
+
+```
+gh_publish(path, dry_run=true)     # 预演
+gh_publish(path, bump="minor")     # 小版本
+gh_publish(path, npm_mode="none")  # 只发 GitHub
+```
+
+## 卸载
+
+```bash
+dsh plugin --profile web remove dsh-github-publisher
+```

@@ -1,0 +1,5 @@
+# dsh-github-publisher bundle patch: 把插件行插入 web profile 的 Loader 树。
+# 安装方式见 README（dsh plugin --profile web add 会自动应用本补丁）。
+- insert:
+    - id: github-publisher
+      name: dsh-github-publisher
